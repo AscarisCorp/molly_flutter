@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:molly/screens/LoginScreen.dart';
+import 'package:molly/screens/login_screen.dart';
+import 'package:molly/themes/custom_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.lightTheme,
       home: const LoginScreen(),
     );
   }
