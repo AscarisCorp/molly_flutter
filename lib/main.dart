@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:molly/screens/login_screen.dart';
 import 'package:molly/themes/custom_theme.dart';
+import 'package:molly/widgets/login_or_signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: CustomTheme.lightTheme,
-      home: const LoginScreen(),
+      // home: Scaffold(body: LoginOrSignup()),
+      home: LoginScreen(),
     );
   }
 }

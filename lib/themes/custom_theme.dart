@@ -8,8 +8,7 @@ class CustomTheme{
 
   static ThemeData get lightTheme {
       return ThemeData(
-        primaryColor: appColors.primaryColor,
-        colorScheme: ThemeData().colorScheme.copyWith(secondary: appColors.secondaryColor),
+        primarySwatch: appColors.getMaterialColor,
         fontFamily: "Ubuntu",
         
       );
