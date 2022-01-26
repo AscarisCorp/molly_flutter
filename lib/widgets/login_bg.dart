@@ -11,7 +11,7 @@ class LoginBG extends StatelessWidget {
     return Column(
             children: [
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +83,7 @@ class LoginBG extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 7,
                 child: Container(
                   height: 100,
                   color: CustomTheme.appColors.white,
