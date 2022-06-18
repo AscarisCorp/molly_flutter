@@ -198,8 +198,8 @@ class LoginOrSignup extends StatelessWidget {
                                   ),
                                 ),
                                 validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Phone is invalid";
+                                  if (value!.isEmpty || value.length < 10) {
+                                    return "Phone number is invalid";
                                   }
                                   return null;
                                 },
@@ -224,7 +224,12 @@ class LoginOrSignup extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                           elevation: 0,
                           child: SvgPicture.asset("assets/next.svg"),
-                        onPressed: () {}),
+                        onPressed: () {
+                            if(_loginKey.currentState!.validate()){
+
+
+                          }
+                        }),
                       )
                       ],
                   ),

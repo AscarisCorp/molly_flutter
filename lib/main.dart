@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:molly/screens/login_screen.dart';
+import 'package:molly/screens/otp_screen.dart';
 import 'package:molly/themes/custom_theme.dart';
 import 'package:molly/widgets/login_or_signup.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: CustomTheme.lightTheme,
       // home: Scaffold(body: LoginOrSignup()),
-      home: LoginScreen(),
+      home: const OtpScreen(),
     );
   }
 }
