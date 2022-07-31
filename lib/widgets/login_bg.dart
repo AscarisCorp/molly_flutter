@@ -45,7 +45,7 @@ class LoginBG extends StatelessWidget {
                           SizedBox(
                             height: 80,
                             width: 80,
-                            child: SvgPicture.asset("assets/Logo.svg"),
+                            // child: SvgPicture.asset("assets/Logo.svg"),
                           ),
                         ],
                       ),
