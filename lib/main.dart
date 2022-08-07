@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: CustomTheme.lightTheme,
       // home: Scaffold(body: LoginOrSignup()),
-      home: const LoginScreen(),
+      home: const OtpScreen(),
     );
   }
 }
