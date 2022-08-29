@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:molly/screens/home_screen.dart';
 import 'package:molly/themes/custom_theme.dart';
+import 'package:molly/widgets/gmaps.dart';
 
 class Otp extends StatelessWidget {
   const Otp({Key? key}) : super(key: key);
@@ -13,6 +15,11 @@ class Otp extends StatelessWidget {
     var focusNode1 = FocusNode();
     var focusNode2 = FocusNode();
     var focusNode3 = FocusNode();
+
+    TextEditingController _otpController = new TextEditingController();
+    TextEditingController _otpController2 = new TextEditingController();
+    TextEditingController _otpController3 = new TextEditingController();
+    TextEditingController _otpController4 = new TextEditingController();
 
     return Padding(
       padding: const EdgeInsets.only(top: 40),
@@ -81,8 +88,9 @@ class Otp extends StatelessWidget {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(5))),
                                 child: TextFormField(
-                                  autofocus: true,
+                                  // autofocus: true,
                                   focusNode: focusNode0,
+                                  controller: _otpController,
                                   onChanged: (value) {
                                     if (value.length == 1) {
                                       FocusScope.of(context)
@@ -97,6 +105,7 @@ class Otp extends StatelessWidget {
                                   keyboardType: TextInputType.number,
                                   decoration: const InputDecoration(
                                       border: InputBorder.none,
+                                      errorStyle: TextStyle(height: 0),
                                       counterText: ""),
                                   validator: (value) {
                                     if (value!.isEmpty) {
@@ -121,6 +130,7 @@ class Otp extends StatelessWidget {
                                         Radius.circular(5))),
                                 child: TextFormField(
                                   focusNode: focusNode1,
+                                  controller: _otpController2,
                                   onChanged: (value) {
                                     if (value.length == 1) {
                                       FocusScope.of(context)
@@ -163,6 +173,7 @@ class Otp extends StatelessWidget {
                                         Radius.circular(5))),
                                 child: TextFormField(
                                   focusNode: focusNode2,
+                                  controller: _otpController3,
                                   onChanged: (value) {
                                     if (value.length == 1) {
                                       FocusScope.of(context)
@@ -205,6 +216,7 @@ class Otp extends StatelessWidget {
                                         Radius.circular(5))),
                                 child: TextFormField(
                                   focusNode: focusNode3,
+                                  controller: _otpController4,
                                   onChanged: (value) {
                                     if (value.isEmpty) {
                                       FocusScope.of(context)
@@ -229,8 +241,7 @@ class Otp extends StatelessWidget {
                                   },
                                 ),
                               ),
-                            ]
-                            ),
+                            ]),
                       )
                     ],
                   ),
@@ -249,7 +260,16 @@ class Otp extends StatelessWidget {
                       elevation: 0,
                       child: SvgPicture.asset("assets/next.svg"),
                       onPressed: () {
-                        if (_otpKey.currentState!.validate()) {}
+                        if (_otpController.text == "5" &&
+                      _otpController2.text == "5" &&
+                      _otpController3.text == "5" &&
+                      _otpController4.text == "5" ) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()),
+                          );
+                        }
                       }),
                 )
               ],
