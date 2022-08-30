@@ -261,14 +261,15 @@ class Otp extends StatelessWidget {
                       child: SvgPicture.asset("assets/next.svg"),
                       onPressed: () {
                         if (_otpController.text == "5" &&
-                      _otpController2.text == "5" &&
-                      _otpController3.text == "5" &&
-                      _otpController4.text == "5" ) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomeScreen()),
-                          );
+                            _otpController2.text == "5" &&
+                            _otpController3.text == "5" &&
+                            _otpController4.text == "5") {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()),
+                              ModalRoute.withName("/Home")
+                              );
                         }
                       }),
                 )
